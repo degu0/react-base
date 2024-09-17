@@ -1,16 +1,21 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
+import Aluno from '../pages/Aluno';
+import Alunos from '../pages/Alunos';
+import Fotos from '../pages/Fotos';
+import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
 
 export default function AppRoutes() {
-  toast.success('Oi, sucesso!');
-  toast.error('Oi, erro!');
-
   return (
     <Routes>
+      <Route path="/" element={<Alunos />} />
+      <Route path="/aluno" element={<Aluno />} />
+      <Route path="/aluno/:id/edit" element={<Aluno />} />
+      <Route path="/foto" element={<Fotos />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="*" element={<Page404/>} />
     </Routes>
