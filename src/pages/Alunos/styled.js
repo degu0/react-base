@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -26,4 +27,8 @@ export const ProfilePicture = styled.div`
 
 `;
 
+export const NovoAluno = styled(Link)`
+  display: block;
+  padding: 20px 0 10px 0;
+`;
 

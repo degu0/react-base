@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
-import Loading from '../../components/Loading';
 import * as actions from '../../store/modules/auth/action';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +14,6 @@ export default function Register() {
   const id = useSelector((state) => state.auth.user.id);
   const nomeStored = useSelector((state) => state.auth.user.nome);
   const emailStored = useSelector((state) => state.auth.user.email);
-  const isLoading = useSelector((state) => state.auth.isLoading);
 
   const navigate = useNavigate();
 
@@ -57,7 +55,6 @@ export default function Register() {
 
   return (
     <Container>
-      <Loading isLoading={isLoading} />
       <h1>{id ? 'Editar dados' : 'Crie sua conta'}</h1>
       <Form onSubmit={handleSubmit}>
         <label htmlFor="nome">

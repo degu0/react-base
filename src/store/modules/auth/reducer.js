@@ -25,7 +25,7 @@ export default function (state = initialState, action) {
     }
     case types.LOGIN_FAILURE: {
       delete axios.defaults.headers.Authorization;
-      const newState = { ...state };
+      const newState = { ...initialState };
       return newState;
     }
     case types.REGISTER_UPDATED_SUCCESS: {

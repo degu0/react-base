@@ -7,7 +7,7 @@ import { get } from 'lodash';
 
 function* loginRequest({ payload }) {
   try {
-    const response = yield call(axios.post, '/tokens', payload);
+    const response = yield call(axios.post, '/token', payload);
     yield put(actions.loginSuccess({ ...response.data }));
 
     toast.success('Você fez login');
